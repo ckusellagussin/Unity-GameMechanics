@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
-    private float movementSpeed = 4.0f;
+    public float movementSpeed = 4.0f;
     private CharacterController cc;
     private Vector2 characterMovement;
     
