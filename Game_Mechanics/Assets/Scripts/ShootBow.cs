@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootBow : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ShootBow : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
 
-            GameObject Arrow = Instantiate(projectile, transform.position, transform.rotation);
+            GameObject Arrow = Instantiate(projectile, transform.position, Quaternion.Euler(0,90,90) );
             Arrow.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(launchX,launchVelocity,launchz));
 
 
