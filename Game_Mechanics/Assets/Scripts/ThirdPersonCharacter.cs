@@ -24,7 +24,12 @@ public class ThirdPersonCharacter : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        
+        Vector3 mouse = Input.mousePosition;
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, gameObject.transform.position.y));
+        Vector3 forward = mouseWorld - gameObject.transform.position;
+        gameObject.transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
+
+
     }
 
     void MovePlayer()
@@ -38,8 +43,7 @@ public class ThirdPersonCharacter : MonoBehaviour
     
     void OnMove(InputValue iv)
     {
-
-        Debug.Log("Movement pressed");
+        
         characterMovement = iv.Get<Vector2>();
 
     }
