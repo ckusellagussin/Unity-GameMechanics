@@ -11,6 +11,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public float y_distance = 10.0f;
     public float z_distance = -20.0f;
     
+    private Camera ;
     private Vector3 velocity = Vector3.zero;
     
     
@@ -28,7 +29,6 @@ public class ThirdPersonCamera : MonoBehaviour
 
         //Get camera position
         Vector3 targetPosition = target.TransformPoint(new Vector3(x_distance, y_distance, z_distance));
-
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
     }
