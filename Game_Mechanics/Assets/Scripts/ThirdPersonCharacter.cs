@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
-    public float movementSpeed = 4.0f;
+    public float movementSpeed = 6.0f;
     private CharacterController cc;
     private Vector2 characterMovement;
     
@@ -19,19 +19,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         cc = GetComponent<CharacterController>();
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        MovePlayer();
-        Vector3 mouse = Input.mousePosition;
-        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, gameObject.transform.position.y));
-        Vector3 forward = mouseWorld - gameObject.transform.position;
-        gameObject.transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
-
-
-    }
-
+    
     void MovePlayer()
     {
 
@@ -40,11 +28,27 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     }
     
-    
     void OnMove(InputValue iv)
     {
         
         characterMovement = iv.Get<Vector2>();
+
+    }
+
+    void CharacterLook()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        transform.LookAt(new Vector3(transform.position.x, mousePos.y, mousePos.z), Vector3.up);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        MovePlayer();
+        CharacterLook();
 
     }
 }
