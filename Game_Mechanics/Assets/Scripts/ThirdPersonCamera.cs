@@ -20,7 +20,6 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         
         
-        
     }
 
     // Update is called once per frame

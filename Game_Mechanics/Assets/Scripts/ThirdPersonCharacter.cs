@@ -34,21 +34,13 @@ public class ThirdPersonCharacter : MonoBehaviour
         characterMovement = iv.Get<Vector2>();
 
     }
-
-    void CharacterLook()
-    {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-        transform.LookAt(new Vector3(transform.position.x, mousePos.y, mousePos.z), Vector3.up);
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
         
         MovePlayer();
-        CharacterLook();
 
     }
 }
