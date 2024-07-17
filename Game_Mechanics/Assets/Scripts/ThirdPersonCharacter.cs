@@ -7,9 +7,13 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
+
+    [SerializeField] private LayerMask groundMask;
     public float movementSpeed = 6.0f;
+    
     private CharacterController cc;
     private Vector2 characterMovement;
+   // private Camera mainCamera;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +21,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         
         Debug.Log("Player created");
         cc = GetComponent<CharacterController>();
+      //  mainCamera = Camera.main;
 
     }
     
@@ -34,13 +39,31 @@ public class ThirdPersonCharacter : MonoBehaviour
         characterMovement = iv.Get<Vector2>();
 
     }
-    
+
+    private void GetMousePosition()
+    {
+
+        Ray ray = Camera.main.ScreenPointToRay((Input.mousePosition));
+
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, groundMask))
+        {
+
+            Vector3 direcion = (raycastHit.point - transform.position).normalized;
+            direcion.z = 0;
+            transform.forward = direcion;
+            transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z));
+            
+            
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         
         MovePlayer();
+        GetMousePosition();
 
     }
 }
