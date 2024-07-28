@@ -49,7 +49,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         {
 
             Vector3 direcion = (raycastHit.point - transform.position).normalized;
-            direcion.z = 0;
+            direcion.y = 0;
             transform.forward = direcion;
             transform.LookAt(new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z));
             
