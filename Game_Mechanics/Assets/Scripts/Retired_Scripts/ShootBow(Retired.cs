@@ -30,7 +30,7 @@ public class ShootBow : MonoBehaviour
         {
             
             GameObject Arrow = Instantiate(projectile, transform.position, transform.rotation);
-            Arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity, ForceMode.VelocityChange);
+            Arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity, ForceMode.Force);
 
         }  
         
