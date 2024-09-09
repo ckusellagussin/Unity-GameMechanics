@@ -8,6 +8,7 @@ public class Shoot_Arrow : MonoBehaviour
     public bool isKinematic = true;
     public bool gravityEnabled = true;
     public float shootVelocity = 300f;
+    public float torque = 200f;
     
     Rigidbody aRigidbody;
    
@@ -30,7 +31,8 @@ public class Shoot_Arrow : MonoBehaviour
          //   aRigidbody.isKinematic = false;
             GameObject Arrow = Instantiate(arrow, arrow.transform.position, arrow.transform.rotation);
             aRigidbody.AddRelativeForce(transform.forward * shootVelocity);
-            
+            //aRigidbody.AddTorque(-transform.up * torque, ForceMode.Force);
+
         }
         
         

@@ -8,20 +8,13 @@ using UnityEngine.UI;
 public class ShootBow : MonoBehaviour
 {
     
-    public GameObject projectile;
+    [SerializeField] Rigidbody projectile;
     public Transform arrowSpawnPoint;
     public float launchVelocity = 300.0f;
-
+    public float torque = 2f;
+   
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-        
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -29,12 +22,16 @@ public class ShootBow : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             
-            GameObject Arrow = Instantiate(projectile, transform.position, transform.rotation);
-            Arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchVelocity, ForceMode.Force);
+            Rigidbody Arrow = Instantiate(projectile, transform.position, transform.rotation);
+            Arrow.AddForce(transform.forward * launchVelocity, ForceMode.Force);
+            Arrow.AddTorque(transform.forward * torque, ForceMode.Force);
+            
 
         }  
         
-        
-        
+       
     }
+
+    
+   
 }

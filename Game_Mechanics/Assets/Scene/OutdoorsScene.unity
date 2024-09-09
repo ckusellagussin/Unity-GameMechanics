@@ -636,8 +636,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0008129136, y: 0.0006856111, z: 0.0020587961}
-  m_Center: {x: 0.000016392432, y: -0.00004667808, z: -0.004492406}
+  m_Size: {x: 0.0008129136, y: 0.0006856111, z: 0.01254781}
+  m_Center: {x: 0.000016392432, y: -0.00004667808, z: 0.0007520961}
 --- !u!1 &1285704855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5334319360590972226, guid: 8d377f739d0fbdf47a7b23154419b640,
@@ -1245,6 +1245,11 @@ PrefabInstance:
       objectReference: {fileID: 1274523809}
     - target: {fileID: 7300716695718741521, guid: bcbea4ea2ca692d44be19f280bac53f3,
         type: 3}
+      propertyPath: torque
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300716695718741521, guid: bcbea4ea2ca692d44be19f280bac53f3,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1253,6 +1258,11 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1285704855}
+    - target: {fileID: 7300716695718741521, guid: bcbea4ea2ca692d44be19f280bac53f3,
+        type: 3}
+      propertyPath: launchVelocity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8800403624960353898, guid: bcbea4ea2ca692d44be19f280bac53f3,
         type: 3}
       propertyPath: m_Mesh
