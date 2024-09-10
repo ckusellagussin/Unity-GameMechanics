@@ -13,7 +13,6 @@ public class ThirdPersonCharacter : MonoBehaviour
     
     private CharacterController cc;
     private Vector2 characterMovement;
-   // private Camera mainCamera;
     
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,6 @@ public class ThirdPersonCharacter : MonoBehaviour
         
         Debug.Log("Player created");
         cc = GetComponent<CharacterController>();
-      //  mainCamera = Camera.main;
 
     }
     

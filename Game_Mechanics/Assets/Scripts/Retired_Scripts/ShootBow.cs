@@ -24,9 +24,8 @@ public class ShootBow : MonoBehaviour
             
             Rigidbody Arrow = Instantiate(projectile, transform.position, transform.rotation);
             Arrow.AddForce(transform.forward * launchVelocity, ForceMode.Force);
-            Arrow.AddTorque(transform.forward * torque, ForceMode.Force);
             
-
+           
         }  
         
        
