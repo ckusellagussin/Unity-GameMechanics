@@ -486,6 +486,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   movementSpeed: 6
+  rotationSpeed: 10
 --- !u!143 &1274523820
 CharacterController:
   m_ObjectHideFlags: 0
@@ -915,6 +916,7 @@ GameObject:
   - component: {fileID: 2014527545}
   - component: {fileID: 2014527544}
   - component: {fileID: 2014527543}
+  - component: {fileID: 2014527547}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -1001,14 +1003,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014527542}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
+  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0.030999959, y: -0.14100003, z: 1.0359998}
   m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 318193196}
   m_Father: {fileID: 590073389}
-  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
+--- !u!114 &2014527547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014527542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5054ce60656e7d6438ccef43e88cfc89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  isRotating: 0
+  startMousePosition: 0
 --- !u!1001 &329884425947380119
 PrefabInstance:
   m_ObjectHideFlags: 0

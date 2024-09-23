@@ -13,6 +13,10 @@ public class ThirdPersonCharacter : MonoBehaviour
     
     private CharacterController cc;
     private Vector2 characterMovement;
+    private float startMousePosition;
+    public float rotationSpeed = 10f;
+    private bool isRotating = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -38,7 +42,16 @@ public class ThirdPersonCharacter : MonoBehaviour
 
     }
 
-    private void GetMousePosition()
+    void BowRotation()
+    {
+        
+        
+        
+        
+    }
+    
+    
+    public void GetMousePosition()
     {
 
         Ray ray = Camera.main.ScreenPointToRay((Input.mousePosition));
@@ -54,7 +67,7 @@ public class ThirdPersonCharacter : MonoBehaviour
             
         }
     }
-
+    
 
     // Update is called once per frame
     void Update()
