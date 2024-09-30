@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class RotateObject : MonoBehaviour
 {
 
     
-    public float speed = 15f;
+    public float speed = 10f;
+    public float pitch = 0f;
     private bool isRotating = false;
-    public float minRotation;
-    public float maxRotation;
-    public float radius;
+    public float mouseMovement;
+    public float currentMousePosition;
     private float startMousePosition;
     
     
@@ -32,7 +34,7 @@ public class RotateObject : MonoBehaviour
         {
 
             isRotating = true;
-            startMousePosition = Input.mousePosition.x;
+            startMousePosition = Input.mousePosition.y;
 
         }
 
@@ -47,17 +49,19 @@ public class RotateObject : MonoBehaviour
         
         if (isRotating)
         {
-            float currentMousePosition = Input.mousePosition.y;
-            float mouseMovement = currentMousePosition - startMousePosition;
+            currentMousePosition = Input.mousePosition.y;
+            mouseMovement = currentMousePosition - startMousePosition;
             
             transform.Rotate(Vector3.right, -mouseMovement * speed * Time.deltaTime);
         
             startMousePosition = currentMousePosition;
-
-            currentMousePosition = Mathf.Clamp(transform.eulerAngles.x, -45, 45);
-            Debug.Log(currentMousePosition);
+            
+            transform.localRotation = Mathf.Clamp(currentMousePosition, -30, 30);
 
         }
+
+        
+
 
     }
 }
