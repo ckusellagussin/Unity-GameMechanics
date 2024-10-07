@@ -487,6 +487,7 @@ MonoBehaviour:
     m_Bits: 8
   movementSpeed: 6
   rotationSpeed: 10
+  isRMBDown: 0
 --- !u!143 &1274523820
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1020,12 +1021,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2014527542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5054ce60656e7d6438ccef43e88cfc89, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad2fa0678a3b804fa34d716b90aa313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 10
-  isRotating: 0
-  startMousePosition: 0
+  speed: 30
+  mouseMovement: 0
+  currentMousePosition: 0
 --- !u!1001 &329884425947380119
 PrefabInstance:
   m_ObjectHideFlags: 0

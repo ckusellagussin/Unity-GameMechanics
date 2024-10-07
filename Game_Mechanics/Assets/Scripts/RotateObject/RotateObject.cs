@@ -10,7 +10,7 @@ public class RotateObject : MonoBehaviour
 {
 
     
-    public float speed = 10f;
+    public float speed = 30f;
     private bool isRotating = false;
     public float mouseMovement;
     public float currentMousePosition;
