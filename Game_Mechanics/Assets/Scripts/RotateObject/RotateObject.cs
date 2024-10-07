@@ -15,7 +15,7 @@ public class RotateObject : MonoBehaviour
     public float mouseMovement;
     public float currentMousePosition;
     private float startMousePosition;
-    private float pitch;
+    private float pitch = 0f;
     
     
     // Start is called before the first frame update
@@ -51,19 +51,19 @@ public class RotateObject : MonoBehaviour
 
         if (isRotating)
         {
-                
-                currentMousePosition = Input.mousePosition.y;
-                mouseMovement = currentMousePosition - startMousePosition;
-                
-
-                transform.Rotate(Vector3.right, -mouseMovement * speed * Time.deltaTime);
-                
-                startMousePosition = currentMousePosition;
-
-
-                pitch = Mathf.Clamp(mouseMovement, -3000f, 3000f);
-                transform.localRotation = quaternion.Euler(pitch);
-             
+            
+            float currentMousePosition = Input.mousePosition.y;
+            
+            float mouseMovement = currentMousePosition - startMousePosition;
+            
+            pitch += mouseMovement * speed * Time.deltaTime;
+            
+            pitch = Mathf.Clamp(pitch, -30f, 30f);
+            
+            Quaternion newRotation = Quaternion.Euler(pitch, 0,0 );
+            transform.localRotation = newRotation;
+            
+            startMousePosition = currentMousePosition;
         }
 
         
