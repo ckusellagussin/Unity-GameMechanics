@@ -58,7 +58,7 @@ public class RotateObject : MonoBehaviour
             
             pitch += mouseMovement * speed * Time.deltaTime;
             
-            pitch = Mathf.Clamp(pitch, -30f, 30f);
+            pitch = Mathf.Clamp(pitch, -35f, -15f);
             
             Quaternion newRotation = Quaternion.Euler(pitch, 0,0 );
             transform.localRotation = newRotation;
