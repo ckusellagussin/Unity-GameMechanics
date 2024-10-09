@@ -620,6 +620,7 @@ MonoBehaviour:
   Arrow: {fileID: 1285704857}
   angularSpeed: 50
   torque: 0.5
+  arrowTipOffset: 0.6
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1051,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GroundX
       objectReference: {fileID: 0}
+    - target: {fileID: 7302236238987507850, guid: ed7a68ae57c00804aa9dd503d39aded2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0299723
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302236238987507850, guid: ed7a68ae57c00804aa9dd503d39aded2,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.0149851665
+      objectReference: {fileID: 0}
     - target: {fileID: 7541716894931065165, guid: ed7a68ae57c00804aa9dd503d39aded2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,7 +1281,7 @@ PrefabInstance:
     - target: {fileID: 3376886148807265428, guid: 8d377f739d0fbdf47a7b23154419b640,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4543983
+      value: 26.79
       objectReference: {fileID: 0}
     - target: {fileID: 3376886148807265428, guid: 8d377f739d0fbdf47a7b23154419b640,
         type: 3}
@@ -1316,6 +1327,7 @@ PrefabInstance:
     - {fileID: 2679483859574353291, guid: 8d377f739d0fbdf47a7b23154419b640, type: 3}
     - {fileID: 4751803584507699861, guid: 8d377f739d0fbdf47a7b23154419b640, type: 3}
     - {fileID: 4641673714843579615, guid: 8d377f739d0fbdf47a7b23154419b640, type: 3}
+    - {fileID: 3026250101621692299, guid: 8d377f739d0fbdf47a7b23154419b640, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

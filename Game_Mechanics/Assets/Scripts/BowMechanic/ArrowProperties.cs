@@ -9,8 +9,8 @@ public class ArrowProperties : MonoBehaviour
     public Rigidbody Arrow;
     public float angularSpeed = 2.0f;
     public float torque = 2f;
-    public float arrowTipOffset = -5;
-    
+
+    public float arrowTipOffset = 5.0f;    
     private bool isStuck = false;
     
 
@@ -32,10 +32,14 @@ public class ArrowProperties : MonoBehaviour
                 Arrow.velocity = Vector3.zero;
                 Arrow.angularVelocity = Vector3.zero;
                 Arrow.isKinematic = true;
-                
-                Vector3 hitNormal = col.contacts[0].normal;
-                transform.rotation = Quaternion.LookRotation(-hitNormal);
 
+                ContactPoint contactPoint = col.contacts[0];
+                Vector3 hitNormal = contactPoint.normal;
+
+                Vector3 forwardDirection = -hitNormal;
+                Vector3 upDirection = transform.up;
+
+               
                 Vector3 arrowPosition = col.contacts[0].point - transform.forward * arrowTipOffset;
                 transform.position = arrowPosition;
 
