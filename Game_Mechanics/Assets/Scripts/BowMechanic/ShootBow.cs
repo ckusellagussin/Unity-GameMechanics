@@ -11,20 +11,31 @@ public class ShootBow : MonoBehaviour
     [SerializeField] Rigidbody projectile;
     public Transform arrowSpawnPoint;
     public float launchVelocity = 300.0f;
-    public float torque = 2f;
-   
-    
     
     // Update is called once per frame
     void Update()
     {
+
+        launchVelocity = Mathf.Clamp(launchVelocity, 130f, 350f);
+        
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+
+            launchVelocity += 10;
+
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+
+            launchVelocity -= 10;
+
+        }
 
         if (Input.GetButtonDown("Fire1"))
         {
             
             Rigidbody Arrow = Instantiate(projectile, transform.position, transform.rotation);
             Arrow.AddForce(transform.forward * launchVelocity, ForceMode.Force);
-            
            
         }  
         
