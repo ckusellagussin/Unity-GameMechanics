@@ -21,13 +21,13 @@ public class ShootBow : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
 
-            launchVelocity += 10;
+            launchVelocity += 20;
 
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
 
-            launchVelocity -= 10;
+            launchVelocity -= 20;
 
         }
 
